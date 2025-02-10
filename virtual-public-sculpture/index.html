@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> -->
+    
+    <!-- A-Frame -->
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <!-- we use three.js to handle raycasting -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex.js"></script>
+    <!-- AR.js A-Frame components -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script>
+        AFRAME.registerComponent('clicker', {
+            init: function() {
+                this.el.addEventListener('click', e => {
+                    alert('Perkins Green\n7:00 AM, 7:13 AM, 7:26 AM, 7:39 AM, 7:52 AM, 8:05 AM, 8:18 AM, 8:31 AM, 8:44 AM, 8:57 AM, 9:10 AM, 9:23 AM, 9:36 AM, 9:49, AM, 10:02 AM, 10:15 AM, 10:28 AM, 10:41 AM, 10:54 AM, 11:07 AM, 11:30 AM, 11:43 AM, 11:56 AM, 12:09 PM, 12:22 PM, 12:35 PM, 12:48 PM, 1:01 PM, 1:14 PM, 1:27 PM, 1:40 PM, 1:53 PM, 2:06 PM, 2:19 PM, 2:32 PM, 2:45 PM, 2:58 PM, 3:11 PM, 3:34 PM, 3:47 PM, 4:00 PM, 4:13 PM, 4:26 PM, 4:39 PM, 4:52 PM, 5:05 PM, 5:18 PM, 5:31 PM, 5:44 PM, 5:57 PM, 6:10 PM, 6:23 PM, 6:36 PM, 6:49 PM');
+                });
+            }
+        });
+    </script>
+    
+    <title>Virtual-Public-Sculpture</title>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs vr-mode-ui="enabled: false" raycaster cursor="rayOrigin: mouse" renderer="antialias: true; alpha: true"> -->
+
+
+    <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+      <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
+      <a-entity 
+        gltf-model="https://people.rit.edu/myw4072/480/virtual-public-sculpture/scene/scene.gltf"
+        gps-new-entity-place="latitude: 43.0859611094697; longitude: -77.66177444742536" 
+        scale=".01 .01 .01"
+        rotation="0 45 0"
+        clicker
+
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 20000"
+      ></a-entity>
+      <!-- "Japanese bus "Yokohama City Bus" (Kanagawa)" (https://skfb.ly/oorHv) by VRC-IW is licensed under Creative Commons Attribution-NonCommercial (http://creativecommons.org/licenses/by-nc/4.0/). -->
+
+    </a-scene>
+
+  </body>
+</html>
